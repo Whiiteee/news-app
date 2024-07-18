@@ -5,7 +5,7 @@ export class Footer extends Component {
     return (
       <div>
         <footer>
-            
+        © Fox News Inc. All rights reserved.
         </footer>
       </div>
     )

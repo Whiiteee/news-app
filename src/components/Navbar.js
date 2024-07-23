@@ -2,8 +2,18 @@ import React, { Component } from 'react'
 
 export class Navbar extends Component {
   render() {
+
+    
+
     return (
-      <div className='nav-bar'>
+      <>
+      <div className='nav-bar' >
+      <div className='toggle-menu'>
+        adfcadfc
+        <div className="bar bar2"></div>
+        <div className="bar bar1"></div>
+        <div className="bar bar3"></div>
+      </div>
         <img src="https://st.depositphotos.com/57803962/55738/v/450/depositphotos_557382494-stock-illustration-news-icon-vector-illustration.jpg" alt="logo" />
         <a href='/home'><span><strong>Home</strong></span></a>
         <a href='/news'><span>News</span></a>
@@ -11,6 +21,7 @@ export class Navbar extends Component {
         <a href='/contact-us'><span>Contact Us</span></a>
 
       </div>
+      </>
     )
   }
 }

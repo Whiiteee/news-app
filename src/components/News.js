@@ -6,6 +6,10 @@ import Newsitem from './Newsitem'
 export class News extends Component {
 
     articles = []
+    // url = ("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1d478029198c49b18f9f10bee1e5f42f")
+    url = ("https://newsapi.org/v2/everything?q=apple&from=2024-07-18&to=2024-07-18&sortBy=popularity&apiKey=e1422705fb6244bda820665e83e3a920")
+    // url = 'https://api.worldnewsapi.com/search-news?text=earth+quake&language=en&earliest-publish-date=2024-04-01'
+
     
     constructor(){
         super();
@@ -15,7 +19,12 @@ export class News extends Component {
     }
     
     async componentDidMount(){
-        let data = await fetch('https://newsapi.org/v2/top-headlines?country=in&category=politics&apiKey=49c29ceed9084e92aaa17e1f18e97c22')
+        let data = await fetch(this.url,{
+            method: 'GET',
+            // headers: {
+            //     'x-api-key': '0228d2cfd50f4063bdb2607d8efd746e' 
+            // }
+        })
         let parsedData =await data.json();
           
         this.setState({articles: parsedData.articles})
@@ -27,7 +36,12 @@ export class News extends Component {
         
     return (
       <div className='news-body'>
-
+        <div className="news-tools">
+            <p>Category:</p>
+            <div className='category'>
+            <div className='button' >Politics</div>
+            </div>
+        </div>
         {
             this.state.articles.map((ele)=>{
                 return(
